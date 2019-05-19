@@ -12,7 +12,7 @@ module.exports = {
             sandbox: true
         });
 
-        const url = uber.getAuthorizeUrl(['history_lite']);
-        res.send(url);
+        // const url = uber.getAuthorizeUrl(['history_lite']);
+        res.send("https://login.uber.com/oauth/v2/authorize?response_type=code&client_id=WpGOnRIpbOQwc1CG5dtfain9hjXsS8Dp&scope=history_lite&redirect_uri=https://movewin.herokuapp.com/api/auth");
     }
 }
