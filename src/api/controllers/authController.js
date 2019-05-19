@@ -21,11 +21,10 @@ module.exports = {
                 return {
                     product_id: item.product_id,
                     distance: item.distance,
-                    duration: item.end_time - item.start_time
+                    end_time: item.end_time,
+                    start_time: item.start_time
                 };
             });
-
-            console.log('Data => ', dataMapped)
             
             res.send(dataMapped);
 
