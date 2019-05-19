@@ -13,6 +13,6 @@ module.exports = {
         });
 
         const url = uber.getAuthorizeUrl(['history_lite']);
-        res.redirect(url);
+        res.send(url);
     }
 }
