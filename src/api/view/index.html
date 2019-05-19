@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>MoveWin - Authentication</title>
+    </head>
+    <body>
+        <label for="login">Login</label>
+        <input type="text" name="login" id="login" placeholder="Login">
+        <br>
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" placeholder="Senha" id="senha">
+        <br>
+        <button id="btn_submit">Logar</button>
+
+
+        <script>
+            // console.log('FOI');
+            // document.onload = () => {
+            // console.log('Loaded');
+            const $submit_button = document.querySelector('#btn_submit');
+            // console.log('BUTTON => ', $submit_button);
+            $submit_button.addEventListener('click', () => {
+                // alert('Fazendo a call');
+                const login = document.querySelector('#login').value;
+                const password = document.querySelector('#senha').value;
+                const content = {
+                    method: "POST",
+                    body: { login, password }
+                };
+
+                // console.log('Content => ', content);
+
+                fetch("http://localhost:3000/api/auth/oauth2", content)
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log('Data => ', data);
+                    });
+            });
+            // };
+        </script>
+    </body>
+</html>
