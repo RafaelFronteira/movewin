@@ -1,4 +1,3 @@
-const path = require('path');
 const httpRequest = require('request');
 
 
@@ -20,8 +19,8 @@ module.exports = {
             
             const dataMapped = data.map(item => {
                 return {
-                    product_id: data.product_id,
-                    distance: data.distance,
+                    product_id: item.product_id,
+                    distance: item.distance,
                     duration: item.end_time - item.start_time
                 };
             });
